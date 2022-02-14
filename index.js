@@ -13,9 +13,10 @@ dotenv.config();
 mongoose
 .connect(process.env.MONGO_URL,
     { useNewUrlParser: true,
-    useUnifiedTopology: true,},
-    ()=>{
-    console.log("connected");
+    useUnifiedTopology: true},
+    (err)=>{
+    if(err) console.log(err)
+    else console.log("mongodb connected"); 
 });
 
 
